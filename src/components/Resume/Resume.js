@@ -22,7 +22,7 @@ const Resume = forwardRef((props, ref) => {
 
   const info = {
     workExp: information[sections.workExp],
-    project: information[sections.project],
+    // project: information[sections.project],
     achievement: information[sections.achievement],
     education: information[sections.education],
     basicInfo: information[sections.basicInfo],
@@ -101,62 +101,62 @@ const Resume = forwardRef((props, ref) => {
         </div>
       </div>
     ),
-    [sections.project]: (
-      <div
-        key={"project"}
-        draggable
-        onDragOver={() => seTarget(info.project?.id)}
-        onDragEnd={() => setSource(info.project?.id)}
-        className={`${styles.section} ${
-          info.project?.sectionTitle ? "" : styles.hidden
-        }`}
-      >
-        <div className={styles.sectionTitle}>{info.project.sectionTitle}</div>
-        <div className={styles.content}>
-          {info.project?.details?.map((item) => (
-            <div className={styles.item}>
-              {item.title ? (
-                <p className={styles.title}>{item.title}</p>
-              ) : (
-                <span />
-              )}
-              {item.link ? (
-                <a className={styles.link} href={item.link}>
-                  <Paperclip />
-                  {item.link}
-                </a>
-              ) : (
-                <span />
-              )}
-              {item.github ? (
-                <a className={styles.link} href={item.github}>
-                  <GitHub />
-                  {item.github}
-                </a>
-              ) : (
-                <span />
-              )}
-              {item.overview ? (
-                <p className={styles.overview}>{item.overview} </p>
-              ) : (
-                <span />
-              )}
-              {item.points?.length > 0 ? (
-                <ul className={styles.points}>
-                  {item.points?.map((elem, index) => (
-                    <li className={styles.point} key={elem + index}>
-                      {elem}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <span />
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    ),
+    // [sections.project]: (
+    //   <div
+    //     key={"project"}
+    //     draggable
+    //     onDragOver={() => seTarget(info.project?.id)}
+    //     onDragEnd={() => setSource(info.project?.id)}
+    //     className={`${styles.section} ${
+    //       info.project?.sectionTitle ? "" : styles.hidden
+    //     }`}
+    //   >
+    //     <div className={styles.sectionTitle}>{info.project.sectionTitle}</div>
+    //     <div className={styles.content}>
+    //       {info.project?.details?.map((item) => (
+    //         <div className={styles.item}>
+    //           {item.title ? (
+    //             <p className={styles.title}>{item.title}</p>
+    //           ) : (
+    //             <span />
+    //           )}
+    //           {item.link ? (
+    //             <a className={styles.link} href={item.link}>
+    //               <Paperclip />
+    //               {item.link}
+    //             </a>
+    //           ) : (
+    //             <span />
+    //           )}
+    //           {item.github ? (
+    //             <a className={styles.link} href={item.github}>
+    //               <GitHub />
+    //               {item.github}
+    //             </a>
+    //           ) : (
+    //             <span />
+    //           )}
+    //           {item.overview ? (
+    //             <p className={styles.overview}>{item.overview} </p>
+    //           ) : (
+    //             <span />
+    //           )}
+    //           {item.points?.length > 0 ? (
+    //             <ul className={styles.points}>
+    //               {item.points?.map((elem, index) => (
+    //                 <li className={styles.point} key={elem + index}>
+    //                   {elem}
+    //                 </li>
+    //               ))}
+    //             </ul>
+    //           ) : (
+    //             <span />
+    //           )}
+    //         </div>
+    //       ))}
+    //     </div>
+    //   </div>
+    // ),
     [sections.education]: (
       <div
         key={"education"}
@@ -287,7 +287,7 @@ const Resume = forwardRef((props, ref) => {
 
   useEffect(() => {
     setColumns([
-      [sections.project, sections.education, sections.summary],
+      [ sections.education, sections.summary],
       [sections.workExp, sections.achievement, sections.other],
     ]);
   }, []);
@@ -318,13 +318,13 @@ const Resume = forwardRef((props, ref) => {
             ) : (
               <span />
             )}
-            {info.basicInfo?.detail?.phone ? (
+            {/* {info.basicInfo?.detail?.phone ? (
               <a className={styles.link}>
                 <Phone /> {info.basicInfo?.detail?.phone}
               </a>
             ) : (
               <span />
-            )}
+            )} */}
             {info.basicInfo?.detail?.linkedin ? (
               <a className={styles.link}>
                 <Linkedin /> {info.basicInfo?.detail?.linkedin}
